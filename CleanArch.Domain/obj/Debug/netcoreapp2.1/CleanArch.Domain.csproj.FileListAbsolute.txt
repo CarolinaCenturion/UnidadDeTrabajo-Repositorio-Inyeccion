@@ -1,0 +1,11 @@
+C:\Users\dalia\source\repos\CleanArch\CleanArch.Domain\bin\Debug\netcoreapp2.1\CleanArch.Domain.deps.json
+C:\Users\dalia\source\repos\CleanArch\CleanArch.Domain\bin\Debug\netcoreapp2.1\CleanArch.Domain.dll
+C:\Users\dalia\source\repos\CleanArch\CleanArch.Domain\bin\Debug\netcoreapp2.1\CleanArch.Domain.pdb
+C:\Users\dalia\source\repos\CleanArch\CleanArch.Domain\bin\Debug\netcoreapp2.1\System.VisualStudio.15.0.dll
+C:\Users\dalia\source\repos\CleanArch\CleanArch.Domain\obj\Debug\netcoreapp2.1\CleanArch.Domain.csproj.CoreCompileInputs.cache
+C:\Users\dalia\source\repos\CleanArch\CleanArch.Domain\obj\Debug\netcoreapp2.1\CleanArch.Domain.AssemblyInfoInputs.cache
+C:\Users\dalia\source\repos\CleanArch\CleanArch.Domain\obj\Debug\netcoreapp2.1\CleanArch.Domain.AssemblyInfo.cs
+C:\Users\dalia\source\repos\CleanArch\CleanArch.Domain\obj\Debug\netcoreapp2.1\CleanArch.Domain.csproj.CopyComplete
+C:\Users\dalia\source\repos\CleanArch\CleanArch.Domain\obj\Debug\netcoreapp2.1\CleanArch.Domain.dll
+C:\Users\dalia\source\repos\CleanArch\CleanArch.Domain\obj\Debug\netcoreapp2.1\CleanArch.Domain.pdb
+C:\Users\dalia\source\repos\CleanArch\CleanArch.Domain\obj\Debug\netcoreapp2.1\CleanArch.Domain.csprojAssemblyReference.cache

@@ -1,0 +1,14 @@
+C:\Users\dalia\source\repos\CleanArch\ClearArch.Infra.Data\bin\Debug\netcoreapp2.1\ClearArch.Infra.Data.deps.json
+C:\Users\dalia\source\repos\CleanArch\ClearArch.Infra.Data\bin\Debug\netcoreapp2.1\ClearArch.Infra.Data.runtimeconfig.json
+C:\Users\dalia\source\repos\CleanArch\ClearArch.Infra.Data\bin\Debug\netcoreapp2.1\ClearArch.Infra.Data.runtimeconfig.dev.json
+C:\Users\dalia\source\repos\CleanArch\ClearArch.Infra.Data\bin\Debug\netcoreapp2.1\ClearArch.Infra.Data.dll
+C:\Users\dalia\source\repos\CleanArch\ClearArch.Infra.Data\bin\Debug\netcoreapp2.1\ClearArch.Infra.Data.pdb
+C:\Users\dalia\source\repos\CleanArch\ClearArch.Infra.Data\bin\Debug\netcoreapp2.1\CleanArch.Domain.dll
+C:\Users\dalia\source\repos\CleanArch\ClearArch.Infra.Data\bin\Debug\netcoreapp2.1\CleanArch.Domain.pdb
+C:\Users\dalia\source\repos\CleanArch\ClearArch.Infra.Data\obj\Debug\netcoreapp2.1\ClearArch.Infra.Data.csprojAssemblyReference.cache
+C:\Users\dalia\source\repos\CleanArch\ClearArch.Infra.Data\obj\Debug\netcoreapp2.1\ClearArch.Infra.Data.csproj.CoreCompileInputs.cache
+C:\Users\dalia\source\repos\CleanArch\ClearArch.Infra.Data\obj\Debug\netcoreapp2.1\ClearArch.Infra.Data.AssemblyInfoInputs.cache
+C:\Users\dalia\source\repos\CleanArch\ClearArch.Infra.Data\obj\Debug\netcoreapp2.1\ClearArch.Infra.Data.AssemblyInfo.cs
+C:\Users\dalia\source\repos\CleanArch\ClearArch.Infra.Data\obj\Debug\netcoreapp2.1\ClearArch.Infra.Data.csproj.CopyComplete
+C:\Users\dalia\source\repos\CleanArch\ClearArch.Infra.Data\obj\Debug\netcoreapp2.1\ClearArch.Infra.Data.dll
+C:\Users\dalia\source\repos\CleanArch\ClearArch.Infra.Data\obj\Debug\netcoreapp2.1\ClearArch.Infra.Data.pdb

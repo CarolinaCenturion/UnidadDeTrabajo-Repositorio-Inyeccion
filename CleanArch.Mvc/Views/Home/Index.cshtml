@@ -1,0 +1,45 @@
+﻿@model IEnumerable<CleanArch.Domain.Models.School>
+
+@{
+    ViewData["Title"] = "Home Page";
+
+}
+
+
+
+<div class="body-content">
+    <!-- Large modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Agregar escuela</button>
+
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                ...
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <table id="tableSchools" class="table table-bordered">
+            <thead>
+                <tr>
+                    <td></td>
+                    <td>Nombre</td>
+                    <td>Descripción</td>
+                    <td>Fecha Creacion</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var school in Model)
+                {
+                    <tr>
+                        <td><button class="btn btn-warning">Editar</button> <button class="btn btn-danger">Eliminar</button></td>
+                        <td>@school.Name</td>
+                        <td>@school.Description</td>
+                        <td>@school.CreationDate</td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
