@@ -1,45 +1,156 @@
 ﻿@model IEnumerable<CleanArch.Domain.Models.School>
 
+
 @{
     ViewData["Title"] = "Home Page";
 
 }
 
+<h2>Index</h2>
 
+<div class="container bs-docs-container">
+   
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCreateSchool">Agregar escuela</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table id="tableSchools" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>Acciones</td>
+                            <td>Nombre</td>
+                            <td>Descripción</td>
+                            <td>Fecha Creacion</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var school in Model)
+                        {
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#modalUpdateSchool" class="btn btn-warning" onclick="GetDataUpdateSchool(@school.Id, 'Home/GetDataUpdateSchool');">Editar</a> <a asp-action="DeleteSchool" asp-route-id="@school.Id" class="btn btn-danger">Eliminar</a></td>
+                                <td>@school.Name</td>
+                                <td>@school.Description</td>
+                                <td>@school.CreationDate</td>
 
-<div class="body-content">
-    <!-- Large modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Agregar escuela</button>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                ...
+    </div>
+<!--Modals-->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modalUpdateSchool">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Editar Escuela</h4>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="txthdnIdSchool" />
+                <div class="form-group">
+                    <label>Nombre:</label>
+                    <input type="text" id="txtNameSchool" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label>Descripción:</label>
+                    <textarea cols="5" rows="3" id="txtADescriptionSchool" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="UpdateSchool('Home/UpdateSchool')">Save changes</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
+
             </div>
         </div>
     </div>
-    <div class="col-md-12">
-        <table id="tableSchools" class="table table-bordered">
-            <thead>
-                <tr>
-                    <td></td>
-                    <td>Nombre</td>
-                    <td>Descripción</td>
-                    <td>Fecha Creacion</td>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var school in Model)
-                {
-                    <tr>
-                        <td><button class="btn btn-warning">Editar</button> <button class="btn btn-danger">Eliminar</button></td>
-                        <td>@school.Name</td>
-                        <td>@school.Description</td>
-                        <td>@school.CreationDate</td>
+</div>
 
-                    </tr>
-                }
-            </tbody>
-        </table>
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modalCreateSchool">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Crear Escuela</h4>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="txthdnIdSchool" />
+                <div class="form-group">
+                    <label>Nombre:</label>
+                    <input type="text" id="txtNameSchoolC" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label>Descripción:</label>
+                    <textarea cols="5" rows="3" id="txtADescriptionSchoolC" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="CreateSchool('Home/CreateNewSchool')">Save changes</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
     </div>
 </div>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<!-- page script -->
+<script>
+
+
+    function GetDataUpdateSchool(id, action) {
+        $.ajax({
+            type: "POST",
+            url: action,
+            data: { id },
+            success: function (response)
+            {
+                $("#txthdnIdSchool").val(response.id);
+                $("#txtNameSchool").val(response.name);
+                $("#txtADescriptionSchool").val(response.description);
+               
+            }
+        });
+    }
+
+    function UpdateSchool(action)
+    {
+        const school = new Object();
+        school.Id = parseInt($("#txthdnIdSchool").val());
+        school.Name =$("#txtNameSchool").val();
+        school.Description = $("#txtADescriptionSchool").val();
+        $.ajax({
+            type: "POST",
+            url: action,
+            data: { school },
+            success: function (response)
+            {
+                alert("Actualización exitosa.");
+                $("#modalUpdateSchool").modal("hide");
+                location.reload();
+            }
+        });
+    }
+
+    function CreateSchool(action) {
+        const school = new Object();
+        school.Name = $("#txtNameSchoolC").val();
+        school.Description = $("#txtADescriptionSchoolC").val();
+        $.ajax({
+            type: "POST",
+            url: action,
+            data: { school },
+            success: function (response)
+            {
+                alert(" Creación exitosa.");
+                $("#modalCreateSchool").modal("hide");
+                location.reload();
+            }
+        });
+    }
+
+</script>

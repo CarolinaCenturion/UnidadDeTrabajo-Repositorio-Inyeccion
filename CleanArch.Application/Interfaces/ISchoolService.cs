@@ -10,5 +10,10 @@ namespace CleanArch.Application.Interfaces
     {
         void AddSchool(School school);
         IEnumerable<School> GetAllSchools();
+        void DeleteSchool(int id);
+        School GetDataSchoolById(int id);
+
+        void UpdateSchool(School school);
+        void CreateSchool(School school);
     }
 }

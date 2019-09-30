@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CleanArch.Mvc.Models;
 using CleanArch.Application.Interfaces;
+using CleanArch.Domain.Models;
 
 namespace CleanArch.Mvc.Controllers
 {
@@ -23,6 +24,57 @@ namespace CleanArch.Mvc.Controllers
         {
             IEnumerable<Domain.Models.School> listSchools = _schoolService.GetAllSchools();
             return View(listSchools);
+        }
+      
+
+        public IActionResult DeleteSchool(int id)
+        {
+            try
+            {
+                _schoolService.DeleteSchool(id);
+                return RedirectToAction("Index");
+            }
+            catch (Exception excepcion )
+            {
+                throw excepcion;
+            }
+        }
+
+        public async Task<School>  GetDataUpdateSchool(int id)
+        {
+            try
+            {
+                return _schoolService.GetDataSchoolById(id);
+            }
+            catch (Exception excepcion)
+            {
+                throw excepcion;
+            }
+        }
+
+        public async void UpdateSchool(School school)
+        {
+            try
+            {
+                _schoolService.UpdateSchool(school);
+                Index();
+            }
+            catch (Exception excepcion)
+            {
+                throw excepcion;
+            }
+        }
+
+        public async void CreateNewSchool(School school)
+        {
+            try
+            {
+                _schoolService.CreateSchool(school);
+            }
+            catch (Exception excepcion)
+            {
+                throw excepcion;
+            }
         }
 
         public IActionResult About()
