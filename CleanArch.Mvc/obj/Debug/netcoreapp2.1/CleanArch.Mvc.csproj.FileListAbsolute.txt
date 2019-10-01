@@ -1,3 +1,9 @@
+C:\Users\dalia\source\repos\CleanArch\CleanArch.Mvc\obj\Debug\netcoreapp2.1\CleanArch.Mvc.csproj.CoreCompileInputs.cache
+C:\Users\dalia\source\repos\CleanArch\CleanArch.Mvc\obj\Debug\netcoreapp2.1\CleanArch.Mvc.RazorAssemblyInfo.cache
+C:\Users\dalia\source\repos\CleanArch\CleanArch.Mvc\obj\Debug\netcoreapp2.1\CleanArch.Mvc.RazorAssemblyInfo.cs
+C:\Users\dalia\source\repos\CleanArch\CleanArch.Mvc\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+C:\Users\dalia\source\repos\CleanArch\CleanArch.Mvc\obj\Debug\netcoreapp2.1\CleanArch.Mvc.AssemblyInfoInputs.cache
+C:\Users\dalia\source\repos\CleanArch\CleanArch.Mvc\obj\Debug\netcoreapp2.1\CleanArch.Mvc.AssemblyInfo.cs
 C:\Users\dalia\source\repos\CleanArch\CleanArch.Mvc\bin\Debug\netcoreapp2.1\CleanArch.Mvc.deps.json
 C:\Users\dalia\source\repos\CleanArch\CleanArch.Mvc\bin\Debug\netcoreapp2.1\CleanArch.Mvc.runtimeconfig.json
 C:\Users\dalia\source\repos\CleanArch\CleanArch.Mvc\bin\Debug\netcoreapp2.1\CleanArch.Mvc.runtimeconfig.dev.json
@@ -14,12 +20,6 @@ C:\Users\dalia\source\repos\CleanArch\CleanArch.Mvc\bin\Debug\netcoreapp2.1\Clea
 C:\Users\dalia\source\repos\CleanArch\CleanArch.Mvc\bin\Debug\netcoreapp2.1\CleanArch.Application.pdb
 C:\Users\dalia\source\repos\CleanArch\CleanArch.Mvc\bin\Debug\netcoreapp2.1\CleanArch.Domain.pdb
 C:\Users\dalia\source\repos\CleanArch\CleanArch.Mvc\obj\Debug\netcoreapp2.1\CleanArch.Mvc.csprojAssemblyReference.cache
-C:\Users\dalia\source\repos\CleanArch\CleanArch.Mvc\obj\Debug\netcoreapp2.1\CleanArch.Mvc.csproj.CoreCompileInputs.cache
-C:\Users\dalia\source\repos\CleanArch\CleanArch.Mvc\obj\Debug\netcoreapp2.1\CleanArch.Mvc.RazorAssemblyInfo.cache
-C:\Users\dalia\source\repos\CleanArch\CleanArch.Mvc\obj\Debug\netcoreapp2.1\CleanArch.Mvc.RazorAssemblyInfo.cs
-C:\Users\dalia\source\repos\CleanArch\CleanArch.Mvc\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
-C:\Users\dalia\source\repos\CleanArch\CleanArch.Mvc\obj\Debug\netcoreapp2.1\CleanArch.Mvc.AssemblyInfoInputs.cache
-C:\Users\dalia\source\repos\CleanArch\CleanArch.Mvc\obj\Debug\netcoreapp2.1\CleanArch.Mvc.AssemblyInfo.cs
 C:\Users\dalia\source\repos\CleanArch\CleanArch.Mvc\obj\Debug\netcoreapp2.1\CleanArch.Mvc.TagHelpers.input.cache
 C:\Users\dalia\source\repos\CleanArch\CleanArch.Mvc\obj\Debug\netcoreapp2.1\CleanArch.Mvc.TagHelpers.output.cache
 C:\Users\dalia\source\repos\CleanArch\CleanArch.Mvc\obj\Debug\netcoreapp2.1\CleanArch.Mvc.RazorCoreGenerate.cache

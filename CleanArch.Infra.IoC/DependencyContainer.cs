@@ -1,6 +1,5 @@
 ﻿using CleanArch.Application.Interfaces;
 using CleanArch.Application.Services;
-using CleanArch.Domain.Interfaces;
 using ClearArch.Infra.Data.Repository;
 using Microsoft.Extensions.DependencyInjection;
 using System;

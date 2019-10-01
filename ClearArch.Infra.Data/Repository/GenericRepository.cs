@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ClearArch.Infra.Data.Repository
 {
-    public class GenericRepository<T>:IGenericRepository<T> where T:class
+    public abstract class GenericRepository<T> where T:class
     {
         protected SchoolsDBContext _ctx;
         public GenericRepository(SchoolsDBContext ctx) => _ctx = ctx;

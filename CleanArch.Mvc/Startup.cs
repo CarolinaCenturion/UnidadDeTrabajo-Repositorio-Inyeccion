@@ -17,6 +17,7 @@ using CleanArch.Infra.IoC;
 using ClearArch.Infra.Data.Repository;
 using CleanArch.Application.Interfaces;
 using CleanArch.Application.Services;
+using ClearArch.Infra.Data.UnitOfWork;
 
 namespace CleanArch.Mvc
 {
@@ -43,6 +44,7 @@ namespace CleanArch.Mvc
                 });
                 //DependencyContainer.RegisterServices(services);
                 services.AddTransient<ISchoolService, SchoolService>();
+                services.AddTransient<ISchoolRepository, SchoolRepository>();
                 services.AddTransient<IUniteOfWork, UnitOfWork>();
                 
                 services.AddDbContext<ApplicationDbContext>(options =>

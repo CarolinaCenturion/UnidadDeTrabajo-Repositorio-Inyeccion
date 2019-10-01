@@ -1,8 +1,8 @@
 ﻿using CleanArch.Application.Interfaces;
 using CleanArch.Application.ViewModels;
-using CleanArch.Domain.Interfaces;
 using CleanArch.Domain.Models;
 using ClearArch.Infra.Data.Repository;
+using ClearArch.Infra.Data.UnitOfWork;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,18 +16,19 @@ namespace CleanArch.Application.Services
         public SchoolService(IUniteOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
+            
         }
         public void AddSchool(School school)
         {
-
-            _unitOfWork.SchoolRepository.Create(school);
+            _unitOfWork.Repository.SchoolRepository.Create(school);
+            _unitOfWork.SaveChanges();
         }
 
         public IEnumerable<School> GetAllSchools()
         {
             try
             {
-                return _unitOfWork.SchoolRepository.GetAll();
+                return _unitOfWork.Repository.SchoolRepository.GetAll();
             }
             catch (Exception exception)
             {
@@ -39,7 +40,7 @@ namespace CleanArch.Application.Services
         {
             try
             {
-                _unitOfWork.SchoolRepository.Delete(id);
+                _unitOfWork.Repository.SchoolRepository.Delete(id);
             }
             catch (Exception exception)
             {
@@ -51,7 +52,7 @@ namespace CleanArch.Application.Services
         {
             try
             {
-                return _unitOfWork.SchoolRepository.Get(id);
+                return _unitOfWork.Repository.SchoolRepository.Get(id);
             }
             catch (Exception exception)
             {
@@ -63,10 +64,10 @@ namespace CleanArch.Application.Services
         {
             try
             {
-                School schoolUpdate = _unitOfWork.SchoolRepository.Get(school.Id);
+                School schoolUpdate = _unitOfWork.Repository.SchoolRepository.Get(school.Id);
                 schoolUpdate.Name = school.Name;
                 schoolUpdate.Description = school.Description;
-                    _unitOfWork.SchoolRepository.Update(schoolUpdate);
+                    _unitOfWork.Repository.SchoolRepository.Update(schoolUpdate);
             }
             catch (Exception exception)
             {
@@ -81,7 +82,7 @@ namespace CleanArch.Application.Services
                 school.CreationDate = DateTime.Now;
                 school.Active = true;
                 school.ImageUrl = "~";
-                _unitOfWork.SchoolRepository.Create(school);
+                _unitOfWork.Repository.SchoolRepository.Create(school);
             }
             catch (Exception exception)
             {
