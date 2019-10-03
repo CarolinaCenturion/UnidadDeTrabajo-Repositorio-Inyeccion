@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/03/2019 09:18:44" ReportInfo.Modified="10/03/2019 15:42:16" ReportInfo.CreatorVersion="2019.4.4.0">
+  <Styles Name="Gris">
+    <Style Name="Título" Font="Arial, 12pt, style=Bold"/>
+    <Style Name="Encabezado" Fill.Color="Gainsboro" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Grupo" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Datos" Font="Arial, 10pt"/>
+    <Style Name="Pie" Fill.Color="Gainsboro" Font="Arial, 10pt"/>
+    <Style Name="Eventos de filas" Fill.Color="WhiteSmoke" Font="Arial, 10pt"/>
+  </Styles>
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqM7gJFg/iaLrqMhRfGy5lGqnfnd3efCVVNal3ysf5m9Hn0Qh4LKxZowVIBV59rFnlSZSVroRg2goPXJ2QvrPvhqDpv7z+Ez/kBkxTgLB5+aBvzYmmXJO8+bAtLgnqvqgcaeu5g4nt5hUJu+Tj/1ca0PX55M0TSbOEgJOR+3Ay/gwY292O29BPrzXDliOOhkaVH0tyURsAjaF8omv7eaKHOU98610VFutXULeLM0pIXt4=">
+      <TableDataSource Name="Schools" DataType="System.Int32" Enabled="true" TableName="Schools">
+        <Column Name="Id" DataType="System.Int32"/>
+        <Column Name="Name" DataType="System.String"/>
+        <Column Name="Description" DataType="System.String"/>
+        <Column Name="ImageUrl" DataType="System.String"/>
+        <Column Name="CreationDate" DataType="System.DateTime"/>
+        <Column Name="Active" DataType="System.Boolean" BindableControl="CheckBox"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <PageHeaderBand Name="PageHeader1" Width="718.2" Height="37.8">
+      <TextObject Name="Text1" Left="9.45" Top="9.45" Width="94.5" Height="18.9" Text="[Schools.Id]" Font="Arial, 10pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="41.8" Width="718.2" Height="85.05" DataSource="Schools">
+      <TextObject Name="Text2" Width="103.95" Height="18.9" Fill.Color="Gainsboro" Text="Name" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text3" Left="103.95" Width="614.25" Height="18.9" Text="[Schools.Name]" Font="Arial, 10pt"/>
+      <TextObject Name="Text4" Top="18.9" Width="103.95" Height="18.9" Fill.Color="Gainsboro" Text="Description" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text5" Left="103.95" Top="18.9" Width="614.25" Height="18.9" Text="[Schools.Description]" Font="Arial, 10pt"/>
+      <TextObject Name="Text6" Top="37.8" Width="103.95" Height="18.9" Fill.Color="Gainsboro" Text="CreationDate" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text7" Left="103.95" Top="37.8" Width="614.25" Height="18.9" Text="[Schools.CreationDate]" Font="Arial, 10pt"/>
+      <TextObject Name="Text8" Top="56.7" Width="103.95" Height="18.9" Fill.Color="Gainsboro" Text="Active" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text9" Left="103.95" Top="56.7" Width="614.25" Height="18.9" Text="[Schools.Active]" Font="Arial, 10pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="130.85" Width="718.2" Height="37.8"/>
+  </ReportPage>
+</Report>

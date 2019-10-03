@@ -1,7 +1,3 @@
-C:\Users\dalia\source\repos\CleanArch\CleanArch.Infra.IoC\obj\Debug\netcoreapp2.1\CleanArch.Infra.IoC.csprojAssemblyReference.cache
-C:\Users\dalia\source\repos\CleanArch\CleanArch.Infra.IoC\obj\Debug\netcoreapp2.1\CleanArch.Infra.IoC.csproj.CoreCompileInputs.cache
-C:\Users\dalia\source\repos\CleanArch\CleanArch.Infra.IoC\obj\Debug\netcoreapp2.1\CleanArch.Infra.IoC.AssemblyInfoInputs.cache
-C:\Users\dalia\source\repos\CleanArch\CleanArch.Infra.IoC\obj\Debug\netcoreapp2.1\CleanArch.Infra.IoC.AssemblyInfo.cs
 C:\Users\dalia\source\repos\CleanArch\CleanArch.Infra.IoC\bin\Debug\netcoreapp2.1\CleanArch.Infra.IoC.deps.json
 C:\Users\dalia\source\repos\CleanArch\CleanArch.Infra.IoC\bin\Debug\netcoreapp2.1\CleanArch.Infra.IoC.dll
 C:\Users\dalia\source\repos\CleanArch\CleanArch.Infra.IoC\bin\Debug\netcoreapp2.1\CleanArch.Infra.IoC.pdb
@@ -11,6 +7,10 @@ C:\Users\dalia\source\repos\CleanArch\CleanArch.Infra.IoC\bin\Debug\netcoreapp2.
 C:\Users\dalia\source\repos\CleanArch\CleanArch.Infra.IoC\bin\Debug\netcoreapp2.1\CleanArch.Application.pdb
 C:\Users\dalia\source\repos\CleanArch\CleanArch.Infra.IoC\bin\Debug\netcoreapp2.1\ClearArch.Infra.Data.pdb
 C:\Users\dalia\source\repos\CleanArch\CleanArch.Infra.IoC\bin\Debug\netcoreapp2.1\CleanArch.Domain.pdb
+C:\Users\dalia\source\repos\CleanArch\CleanArch.Infra.IoC\obj\Debug\netcoreapp2.1\CleanArch.Infra.IoC.csprojAssemblyReference.cache
+C:\Users\dalia\source\repos\CleanArch\CleanArch.Infra.IoC\obj\Debug\netcoreapp2.1\CleanArch.Infra.IoC.csproj.CoreCompileInputs.cache
+C:\Users\dalia\source\repos\CleanArch\CleanArch.Infra.IoC\obj\Debug\netcoreapp2.1\CleanArch.Infra.IoC.AssemblyInfoInputs.cache
+C:\Users\dalia\source\repos\CleanArch\CleanArch.Infra.IoC\obj\Debug\netcoreapp2.1\CleanArch.Infra.IoC.AssemblyInfo.cs
 C:\Users\dalia\source\repos\CleanArch\CleanArch.Infra.IoC\obj\Debug\netcoreapp2.1\CleanArch.Infra.IoC.csproj.CopyComplete
 C:\Users\dalia\source\repos\CleanArch\CleanArch.Infra.IoC\obj\Debug\netcoreapp2.1\CleanArch.Infra.IoC.dll
 C:\Users\dalia\source\repos\CleanArch\CleanArch.Infra.IoC\obj\Debug\netcoreapp2.1\CleanArch.Infra.IoC.pdb

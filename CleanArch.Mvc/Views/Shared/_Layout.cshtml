@@ -3,19 +3,22 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - CleanArch.Mvc</title>
+    <title>@ViewData["Title"]</title>
 
     <environment include="Development">
+        <!-- =============== VENDOR STYLES ===============-->
+
+        <link href="~/vendor/fontawesome/css/font-awesome.min.css" />
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/app.css" />
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/app.css" />
         <link href="~/lib/bootstrap/dist/css/theme.css" rel="stylesheet" />
     </environment>
-    <environment exclude="Development">
+    @*<environment exclude="Development">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    </environment>
+    </environment>*@
 </head>
 <body>
 
@@ -28,10 +31,10 @@
                 <div class="navbar-header">
                     <a href="#/" class="navbar-brand">
                         <div class="brand-logo">
-                            <img src="../Imagenes/LogoGeneral.png" class="img-responsive" />
+                            <img src="~/images/LogoGeneral.png" class="img-responsive" />
                         </div>
                         <div class="brand-logo-collapsed">
-                            <img src="../Imagenes/LogoGeneralSimple.png" alt="App Logo" class="img-responsive" />
+                            <img src="~/images/LogoGeneralSimple.png" alt="App Logo" class="img-responsive" />
                         </div>
                     </a>
                 </div>
@@ -222,10 +225,10 @@
             <div class="pull-right">
                 <div class="nombresistema">
                     <div class="nombrelogo">
-                        <img src="@Url.Content("~/../../wwwroot/images/crecerengrande.png")" style="height:55px" />
+                        <img src="~/images/crecerengrande.png" style="height:55px" class="img-responsive" />
                     </div>
                     <div class="logo">
-                        <img src="Imagenes/logo(2016).png" style="height:55px" />
+                        <img src="~/images/logo(2016).png" style="height:55px" class="img-responsive" />
                     </div>
                 </div>
             </div>
@@ -239,7 +242,7 @@
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/app.js" asp-append-version="true"></script>
     </environment>
-    <environment exclude="Development">
+    @*<environment exclude="Development">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
                 asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
                 asp-fallback-test="window.jQuery"
@@ -253,7 +256,7 @@
                 integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd">
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
+    </environment>*@
 
     @RenderSection("Scripts", required: false)
 </body>

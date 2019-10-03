@@ -14,6 +14,20 @@ body,
 .topnavbar {
   background-color: #fff;
 }
+.nav.nav-pills li > a 
+{
+    color:black;
+}
+.nav.nav-pills li.active > a
+{
+    background-color:#74BC7C;
+     color:white;
+}
+.nav.nav-pills li.active> a:hover, a:focus
+{
+     background-color:#74BC7C;
+     color:white;
+}
 .topnavbar .navbar-header {
 background: rgba(115,187,124,1);
 background: -moz-linear-gradient(left, rgba(115,187,124,1) 0%, rgba(116,189,124,1) 100%);
@@ -305,7 +319,7 @@ body .sk-three-bounce div
 }
 
 tr.shown td.details-control {
-    background: url('http://www.datatables.net/examples/resources/details_close.png') no-repeat center center;
+    /*background: url('http://www.datatables.net/examples/resources/details_close.png') no-repeat center center;*/
 }
 /* ========================================================================
     section

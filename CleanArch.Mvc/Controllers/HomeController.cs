@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using CleanArch.Mvc.Models;
 using CleanArch.Application.Interfaces;
 using CleanArch.Domain.Models;
+using FastReport;
+using System.Data;
+using System.IO;
 
 namespace CleanArch.Mvc.Controllers
 {
@@ -23,7 +26,9 @@ namespace CleanArch.Mvc.Controllers
         public ViewResult Index()
         {
             IEnumerable<Domain.Models.School> listSchools = _schoolService.GetAllSchools();
+            GenerateReportTest();
             return View(listSchools);
+         
         }
       
 
@@ -74,6 +79,46 @@ namespace CleanArch.Mvc.Controllers
             catch (Exception excepcion)
             {
                 throw excepcion;
+            }
+        }
+
+        public void GenerateReportTest()
+        {
+            try
+            {
+                // create report instance
+                Report report = new Report();
+
+                // load the existing report
+
+
+               
+                // Add DataTable Row
+                List<School> listaEscuelasActivas = _schoolService.GetAllSchools().Where(s => s.Active == true).ToList();
+              
+               
+                // register the data
+                report.RegisterData(listaEscuelasActivas, "tabla");
+                report.Load("report.frx");
+
+
+                DataBand db1 = (DataBand)report.FindObject("Data1");
+                db1.DataSource = report.GetDataSource("tabla");
+                //create export instance
+
+                //ExportBase ex = new ExportBase();
+                //r
+                report.Prepare();
+                report.Save("example.pdf");
+                //FastReport.Export.PdfSimple.PDFSimpleExport export = new FastReport.Export.PdfSimple.PDFSimpleExport();
+               
+                //report.Export(export, "result.pdf");
+                //// free resources used by report
+                report.Dispose();
+            }
+            catch (Exception exception)
+            {
+                throw exception;
             }
         }
 

@@ -20,8 +20,19 @@ namespace CleanArch.Application.Services
         }
         public void AddSchool(School school)
         {
-            _unitOfWork.Repository.SchoolRepository.Create(school);
-            _unitOfWork.SaveChanges();
+            try
+            {
+                _unitOfWork.BeginTransaction();
+                _unitOfWork.Repository.SchoolRepository.Create(school);
+                _unitOfWork.SaveChanges();
+                _unitOfWork.CommitTransaction();
+            }
+            catch (Exception excepcion)
+            {
+                _unitOfWork.RollbackTransaction();
+                throw excepcion;
+            }
+           
         }
 
         public IEnumerable<School> GetAllSchools()
