@@ -103,6 +103,7 @@ namespace CleanArch.Mvc
         {
             public override string QuoteIdentifier(string value, System.Data.Common.DbConnection connection)
             {
+
                 return "\"" + value + "\"";
             }
 

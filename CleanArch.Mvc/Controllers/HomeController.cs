@@ -10,6 +10,13 @@ using CleanArch.Domain.Models;
 using FastReport;
 using System.Data;
 using System.IO;
+using System.Xml;
+using System.Xml.Serialization;
+using FastReport.Web;
+using FastReport.Export.PdfSimple;
+using static CleanArch.Mvc.Startup;
+using FastReport.Utils;
+using FastReport.Export.Image;
 
 namespace CleanArch.Mvc.Controllers
 {
@@ -24,11 +31,12 @@ namespace CleanArch.Mvc.Controllers
             _schoolService = schoolService;
         }
         public ViewResult Index()
-        {
+        { 
+
             IEnumerable<Domain.Models.School> listSchools = _schoolService.GetAllSchools();
-            GenerateReportTest();
+            //GenerateReportTest();
             return View(listSchools);
-         
+
         }
       
 
@@ -82,58 +90,103 @@ namespace CleanArch.Mvc.Controllers
             }
         }
 
-        public void GenerateReportTest()
+        public IActionResult GenerateReportTest()
         {
             try
             {
-                // create report instance
-                Report report = new Report();
-
-                // load the existing report
-
-
                
-                // Add DataTable Row
+                Config.WebMode = true;
+                StringWriter sw = new StringWriter();
+                XmlTextWriter tw = null;
                 List<School> listaEscuelasActivas = _schoolService.GetAllSchools().Where(s => s.Active == true).ToList();
+                XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(listaEscuelasActivas.GetType());
+                tw = new XmlTextWriter(sw);
+               serializer.Serialize(tw, listaEscuelasActivas);
+             
+               //​DataSet dataSet = new System.Data.DataSet();
+             
+                 WebReport report = new WebReport();
               
-               
+                // load the existing report
+                report.Report.Load("report.frx");
+                // Add DataTable Row
+              
                 // register the data
-                report.RegisterData(listaEscuelasActivas, "tabla");
-                report.Load("report.frx");
+                report.Report.RegisterData(sw.ToString(), "Schools");
+                report.Report.GetDataSource("Schools").Enabled = true;
 
-
-                DataBand db1 = (DataBand)report.FindObject("Data1");
-                db1.DataSource = report.GetDataSource("tabla");
+                report.Report.SetParameterValue("Name", "Colegio Guadalupe Victoria");
+                DataBand db1 = (DataBand)report.Report.FindObject("Data1");
+                db1.DataSource = report.Report.GetDataSource("Schools");
                 //create export instance
 
                 //ExportBase ex = new ExportBase();
                 //r
-                report.Prepare();
-                report.Save("example.pdf");
-                //FastReport.Export.PdfSimple.PDFSimpleExport export = new FastReport.Export.PdfSimple.PDFSimpleExport();
-               
-                //report.Export(export, "result.pdf");
-                //// free resources used by report
-                report.Dispose();
+
+                report.Report.Prepare();
+
+
+                // save file in stream
+                using (MemoryStream stream = new MemoryStream()) // Create a stream for the report
+                {
+
+                    //ImageExport png = new ImageExport();
+                    PDFSimpleExport pdf = new PDFSimpleExport();
+                    report.Report.Export(pdf, stream);
+
+                    //png.ImageFormat = ImageExportFormat.Png;
+                    //png.SeparateFiles = false;
+                    // Use the stream to store the report, so as not to create unnecessary files
+                    //report.Export(png, stream);
+                    string mime = "application/pdf";
+                    return File(stream.ToArray(), mime, "example.pdf"); // attachment
+                                                                        //report.Report.Export(new PDFSimpleExport(), stream);
+                                                                        //stream.Position = 0;
+                                                                        //// return stream in browser
+                                                                        //return File(stream, "application/zip", "report.pdf");
+
+                    //report.Save("example.pdf");
+                    //FastReport.Export.PdfSimple.PDFSimpleExport export = new FastReport.Export.PdfSimple.PDFSimpleExport();
+
+                    //report.Export(export, "result.pdf");
+                    //// free resources used by report
+                }
+
+
+
             }
             catch (Exception exception)
             {
                 throw exception;
             }
+            
         }
 
+
+        
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
 
-            return View();
+            try
+            {
+                var webReport = new WebReport();
+
+                webReport.Report.Load("report.frx");
+                webReport.Report.SetParameterValue("Name", "Colegio Guadalupe Victoria");
+
+                return View(webReport);
+            }
+            catch (Exception exception)
+            {
+
+                throw exception;
+            }
+           
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
+            return GenerateReportTest();
         }
 
         public IActionResult Privacy()

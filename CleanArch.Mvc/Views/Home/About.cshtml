@@ -1,7 +1,7 @@
-﻿@{
-    ViewData["Title"] = "About";
+﻿@model FastReport.Web.WebReport;
+@{
+    ViewData["Title"] = "Reportes";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
-
-<p>Use this area to provide additional information.</p>
+<div class="container bs-docs-container">
+    @await Model.Render()
+</div>
